@@ -16,7 +16,7 @@ const saver = store => next => action => {
     return result;
 };
 
-const storeFactory = (initialState={}) => {
+const storeFactory = (initialState = {news: []}) => {
     return applyMiddleware(logger, saver)(createStore)(
         user,
         (localStorage['redux-store']) ?
