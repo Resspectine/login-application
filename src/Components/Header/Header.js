@@ -1,5 +1,6 @@
 import React from 'react';
 import {NavLink} from "react-router-dom";
+import Profile from './Profile'
 import './style.css';
 
 const Header = () =>
@@ -9,6 +10,7 @@ const Header = () =>
             <NavLink className='nav-link' to='/news' activeClassName='selected'>News</NavLink>
             <NavLink className='nav-link' to='/profile' activeClassName='selected'>Profile</NavLink>
         </div>
+        <Profile/>
     </div>;
 
 export default Header;

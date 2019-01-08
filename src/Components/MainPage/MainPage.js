@@ -7,4 +7,5 @@ const MainPage = () => (
         <Link to='/login'>Log in</Link>
     </div>
 );
+
 export default MainPage;
