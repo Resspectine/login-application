@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const NewsTemplate = ({title, text}) => (
     <div>
@@ -8,8 +9,8 @@ const NewsTemplate = ({title, text}) => (
 );
 
 NewsTemplate.propTypes = {
-    title: React.PropTypes.string,
-    text: React.PropTypes.string
+    title: PropTypes.string,
+    text: PropTypes.string
 };
 
 export default NewsTemplate;
