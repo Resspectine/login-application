@@ -1,18 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
-import {HashRouter} from "react-router-dom";
+import {HashRouter} from 'react-router-dom';
 import App from './App/App';
 import './index.css';
 
-import initializeFakeBackend from './Helpers/fakebackend';
+import storeFactory from './Store/store';
 
-initializeFakeBackend();
-
-import news from './news';
-import storeFactory from "./Store/store";
-
-const store = storeFactory({news: news});
+const store = storeFactory();
 
 ReactDOM.render(
     <Provider store={store}>

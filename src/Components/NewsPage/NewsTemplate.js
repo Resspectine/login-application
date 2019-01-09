@@ -7,4 +7,9 @@ const NewsTemplate = ({title, text}) => (
     </div>
 );
 
+NewsTemplate.propTypes = {
+    title: React.PropTypes.string,
+    text: React.PropTypes.string
+};
+
 export default NewsTemplate;

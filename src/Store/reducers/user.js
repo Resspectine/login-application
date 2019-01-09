@@ -4,30 +4,19 @@ export const user = (state = {}, action) => {
     switch (action.type) {
         case C.LOGGED_IN:
             return {
-                ...state,
-                user: {
-                    name: action.name,
-                    loggedIn: true
-                }
+                userId: action.id,
+                loggedIn: true,
             };
         case C.LOGGING_IN_FAILED:
             return {
-                ...state,
-                user: {
-                    loggingFailed: action.message
-                }
+                error: action.message
             };
         case C.LOGGING_IN:
             return {
-                ...state,
-                user: {
-                    loggingIn: true
-                }
+                loggingIn: true
             };
         case C.LOGOUT:
             return {
-                ...state,
-                user: {}
             };
         default:
             return state;

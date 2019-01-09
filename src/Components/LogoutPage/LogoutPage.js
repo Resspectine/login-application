@@ -5,6 +5,7 @@ import {logout} from "../../Store/actions/actions";
 
 const LogoutPage = ({logout}) => {
     logout();
+
     return <Redirect to='/'/>
 };
 

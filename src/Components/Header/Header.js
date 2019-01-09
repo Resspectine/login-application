@@ -1,16 +1,16 @@
 import React from 'react';
 import {NavLink} from "react-router-dom";
-import Profile from './Profile'
+import LoginButton from './LoginButton'
 import './style.css';
 
 const Header = () =>
     <div className='header'>
         <div className='links'>
-            <NavLink className='nav-link' to='/' activeClassName='selected' exact>Main</NavLink>
-            <NavLink className='nav-link' to='/news' activeClassName='selected'>News</NavLink>
-            <NavLink className='nav-link' to='/profile' activeClassName='selected'>Profile</NavLink>
+            <NavLink className='nav-link' to='/' activeClassName='selected' exact>Главная страница</NavLink>
+            <NavLink className='nav-link' to='/news' activeClassName='selected'>Новости</NavLink>
+            <NavLink className='nav-link' to='/profile' activeClassName='selected'>Профиль</NavLink>
         </div>
-        <Profile/>
+        <LoginButton/>
     </div>;
 
 export default Header;

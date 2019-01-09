@@ -1,8 +1,11 @@
-import {createStore, applyMiddleware} from "redux";
+import {createStore, applyMiddleware, combineReducers} from "redux";
 import thunkMiddleware from 'redux-thunk';
-import {user} from "./reducers/reducers";
+import {user} from "./reducers/user";
+import {profile} from "./reducers/profile";
+import {news} from "./reducers/news";
+import {error} from "./reducers/error";
 
-const defaultState = {news: [], user: {}};
+const defaultState = {profile: {}, user: {}, news: {}, error: ''};
 
 const logger = store => next => action => {
     console.groupCollapsed('dispatching', action.type);
@@ -21,7 +24,7 @@ const saver = store => next => action => {
 
 const storeFactory = (initialState) => {
     return applyMiddleware(logger, saver, thunkMiddleware)(createStore)(
-        user,
+        combineReducers({user, profile, news, error}),
         (localStorage['redux-store']) ?
             JSON.parse(localStorage['redux-store']) :
             {
